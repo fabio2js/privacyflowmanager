@@ -8,6 +8,8 @@
   --color-muted: #666;
 }
 
+
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -168,3 +170,30 @@ section h2 {
   margin-top: 0.3rem;
   letter-spacing: 0.2px;
 }
+.diagram {
+      display: block;
+      margin: 0 auto;
+      max-width: 90%;
+    }
+    /* Centra i testi delle sezioni principali */
+    #team .container h2,
+    #team .container p,
+    #how .container h2,
+    #how .container p,
+    #how .container .how-steps p,
+    #benefits .container h2,
+    #benefits .container ul {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* Rimuove rientri */
+    #team .container p,
+    #how .container p,
+    #how .container .how-steps p,
+    #benefits .container ul li {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      padding-left: 0;
+      list-style-position: inside;
+    }
