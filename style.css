@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --color-bg: #f7f9fb;
+  --color-primary: #0b5ed7;
+  --color-accent: #00b894;
+  --color-text: #222;
+  --color-muted: #666;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+}
+
+.container { width: 90%; max-width: 1100px; margin: 0 auto; }
+header {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 2.5rem 0; /* leggermente più alto */
+  text-align: center;
+}
+
+header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+header .tagline { font-size: 1.1rem; color: #eaf4ff; }
+
+nav {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 1rem;
+}
+nav a {
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin: 0 1rem;
+}
+nav a:hover { color: var(--color-accent); }
+
+.hero {
+  background: linear-gradient(120deg, #0b5ed7 0%, #00b894 100%);
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+.hero h2 { font-size: 2rem; margin-bottom: 1rem; }
+.hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+.cta-btn {
+  background: #fff;
+  color: #0b5ed7;
+  padding: 0.8rem 1.6rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.cta-btn:hover { background: #f2f2f2; }
+
+.features, .how, .benefits, .contact {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+.features h2, .how h2, .benefits h2, .contact h2 {
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+.card:hover { transform: translateY(-4px); }
+
+.diagram {
+  max-width: 600px;
+  margin: 2rem auto;
+  display: block;
+}
+.logo {
+  width: clamp(340px, 45vw, 520px); /* logo più grande */
+  height: auto;
+  display: block;
+  margin: 0 auto 0.3rem auto;
+}
+
+.benefits ul {
+  list-style: none;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+.benefits li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+.benefits li::before {
+  content: "✔";
+  color: var(--color-accent);
+  position: absolute;
+  left: 0;
+}
+
+.email {
+  font-size: 1.3rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  background: #fff;
+  border-top: 1px solid #eee;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+.how-steps p {
+  margin-bottom: 1rem;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  line-height: 1.6;
+  font-size: 0.95rem; /* prima 1.05rem */
+  color: #333;
+}
+
+
+.how-steps strong {
+  color: #0b5ed7;
+}
+
+.cli-note {
+  margin-top: 2rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #003a9f;
+}
+section p {
+  font-size: 0.95rem;
+}
+
+section h2 {
+  margin-bottom: 1.5rem; /* meno spazio sotto i titoli */
+}
+.tagline {
+  font-style: italic;
+  color: #003a9f;
+  font-size: 1.05rem;
+  margin-top: 0.3rem;
+  letter-spacing: 0.2px;
+}

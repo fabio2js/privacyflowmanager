@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 140">
+  <defs>
+    <!-- Gradiente contrastante per Flow -->
+    <linearGradient id="gradFlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00ffc3"/>
+      <stop offset="100%" stop-color="#007bff"/>
+    </linearGradient>
+
+    <!-- Pattern di flusso -->
+    <pattern id="flowPattern" patternUnits="userSpaceOnUse" width="200" height="140">
+      <path d="M0 70 Q50 10,100 70 T200 70"
+            fill="none" stroke="url(#gradFlow)" stroke-width="5" opacity="0.55"/>
+      <path d="M0 90 Q50 40,100 90 T200 90"
+            fill="none" stroke="url(#gradFlow)" stroke-width="4" opacity="0.35"/>
+    </pattern>
+
+    <!-- Maschera per Flow -->
+    <mask id="flowMask">
+      <text x="355" y="95"
+            font-family="Inter, Segoe UI, sans-serif"
+            font-weight="900"
+            font-size="90"
+            fill="white">Flow</text>
+    </mask>
+  </defs>
+
+  <!-- Raggruppa tutto e centra -->
+  <g transform="translate(50,0)">
+    <!-- Privacy più scuro e leggibile -->
+    <text x="0" y="95"
+          font-family="Inter, Segoe UI, sans-serif"
+          font-weight="900"
+          font-size="90"
+          fill="#04203b">Privacy</text>
+
+    <!-- Pattern visibile solo dentro Flow -->
+    <rect x="355" y="0" width="370" height="140"
+          fill="url(#flowPattern)" mask="url(#flowMask)"/>
+
+    <!-- Contorno Flow -->
+    <text x="355" y="95"
+          font-family="Inter, Segoe UI, sans-serif"
+          font-weight="900"
+          font-size="90"
+          fill="none"
+          stroke="#003a9f"
+          stroke-width="1.5">Flow</text>
+  </g>
+</svg>
