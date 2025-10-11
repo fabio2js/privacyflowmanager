@@ -100,6 +100,7 @@ nav a:hover { color: var(--color-accent); }
   margin: 0 auto 0.3rem auto;
 }
 
+
 .benefits ul {
   list-style: none;
   max-width: 600px;
@@ -184,21 +185,12 @@ section h2 {
     #how .container p,
     #how .container .how-steps p,
     #benefits .container h2,
-    #benefits .container ul {
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-    }
+ 
     /* Rimuove rientri */
     #team .container p,
     #how .container p,
     #how .container .how-steps p,
-    #benefits .container ul li {
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
-      padding-left: 0;
-      list-style-position: inside;
-    }
+ 
     /* Correzione centratura del diagramma su mobile */
     @media (max-width: 640px) {
       .how .container {
@@ -216,3 +208,14 @@ section h2 {
         height: auto;
       }
     }
+
+    @media (max-width: 640px) {
+  #benefits .container ul {
+    padding-left: 1.5rem;      /* ripristina un po’ di spazio per la spunta */
+    text-align: left;          /* riallinea il testo per evitare sovrapposizioni */
+    list-style-position: outside; /* mette la spunta fuori dal testo */
+  }
+  #benefits .container ul li {
+    display: list-item;        /* forza il comportamento corretto della lista */
+  }
+}
