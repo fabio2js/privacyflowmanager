@@ -20,7 +20,7 @@
             font-family="Inter, Segoe UI, sans-serif"
             font-weight="900"
             font-size="90"
-            fill="white">Flow</text>
+            fill="#1a3e7a">Flow</text>
     </mask>
   </defs>
 
@@ -42,8 +42,6 @@
           font-family="Inter, Segoe UI, sans-serif"
           font-weight="900"
           font-size="90"
-          fill="none"
-          stroke="#003a9f"
-          stroke-width="1.5">Flow</text>
+          fill="#1a3e7a">Flow</text>
   </g>
 </svg>

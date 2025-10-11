@@ -10,7 +10,52 @@
   <meta name="author" content="PrivacyFlow Labs" />
   <link rel="icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css" />
-   
+  <style>
+    .diagram {
+      display: block;
+      margin: 0 auto;
+      max-width: 90%;
+    }
+    /* Centra i testi delle sezioni principali */
+    #team .container h2,
+    #team .container p,
+    #how .container h2,
+    #how .container p,
+    #how .container .how-steps p,
+    #benefits .container h2,
+    #benefits .container ul {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* Rimuove rientri */
+    #team .container p,
+    #how .container p,
+    #how .container .how-steps p,
+    #benefits .container ul li {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      padding-left: 0;
+      list-style-position: inside;
+    }
+    /* Correzione centratura del diagramma su mobile */
+    @media (max-width: 640px) {
+      .how .container {
+        padding-left: 0;
+        padding-right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* centra tutti i figli, inclusa l'immagine */
+      }
+      .how .container .diagram {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        height: auto;
+      }
+    }
+  </style>
 </head>
 <body>
 <header>
