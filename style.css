@@ -219,3 +219,46 @@ section h2 {
     display: list-item;        /* forza il comportamento corretto della lista */
   }
 }
+
+/* Sezione Vantaggi – resa responsive */
+#benefits .container ul {
+  list-style: none; /* Rimuove i bullet predefiniti */
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: left; /* allinea bene su mobile */
+}
+
+#benefits .container ul li {
+  position: relative;
+  padding-left: 2rem; /* spazio per la spunta */
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* Spunta verde come pseudo-elemento */
+#benefits .container ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #009e60; /* verde leggibile su sfondo chiaro */
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Migliore leggibilità e centratura su schermi piccoli */
+@media (max-width: 640px) {
+  #benefits .container ul {
+    text-align: left;
+    padding: 0 1rem;
+  }
+  #benefits .container ul li {
+    padding-left: 1.8rem;
+    font-size: 1rem;
+  }
+  #benefits .container ul li::before {
+    font-size: 1.1rem;
+    top: 0.1rem;
+  }
+}

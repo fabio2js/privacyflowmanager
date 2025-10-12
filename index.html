@@ -3,12 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PrivacyFlow – Mappa dei flussi di dati e compliance privacy</title>
+   <title>PrivacyFlow – Mappatura intelligente dei flussi di dati personali | Software per audit e compliance</title>
+  <meta name="description" content="PrivacyFlow automatizza la mappatura dei flussi di dati personali per la conformità GDPR, la documentazione dei trattamenti e l’audit di compliance.">
+  
   <link rel="canonical" href="https://www.privacyflow.it/" />
-  <meta name="description" content="PrivacyFlow mappa e visualizza i flussi di dati personali, genera report di compliance e semplifica la conformità al GDPR." />
-  <meta name="keywords" content="privacyflow, GDPR, flussi dati, mappa dati, compliance, data flow mapping, privacy tool" />
-  <meta name="author" content="PrivacyFlow Labs" />
-  <link rel="icon" href="favicon.ico" />
+   <meta name="keywords" content="privacyflow, GDPR, flussi dati, mappa dati, compliance, data flow mapping, privacy tool" />
+  <meta name="author" content="PrivacyFlow Labs" /> 
+  <meta property="og:title" content="PrivacyFlow – Mappatura intelligente dei flussi di dati personali">
+  <meta property="og:description" content="Software per audit e compliance. Mappa e visualizza i flussi di dati personali.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://privacyflow.it">
+  <meta property="og:image" content="https://privacyflow.it/assets/logo.png">
+   
+   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="style.css" />
   <style>
     .diagram {
@@ -28,16 +35,49 @@
       margin-left: auto;
       margin-right: auto;
     }
-    /* Rimuove rientri */
-    #team .container p,
-    #how .container p,
-    #how .container .how-steps p,
-    #benefits .container ul li {
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
-      padding-left: 0;
-      list-style-position: inside;
-    }
+    /* Sezione Vantaggi – resa responsive */
+#benefits .container ul {
+  list-style: none; /* Rimuove i bullet predefiniti */
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: left; /* allinea bene su mobile */
+}
+
+#benefits .container ul li {
+  position: relative;
+  padding-left: 2rem; /* spazio per la spunta */
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* Spunta verde come pseudo-elemento */
+#benefits .container ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #009e60; /* verde leggibile su sfondo chiaro */
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Migliore leggibilità e centratura su schermi piccoli */
+@media (max-width: 640px) {
+  #benefits .container ul {
+    text-align: left;
+    padding: 0 1rem;
+  }
+  #benefits .container ul li {
+    padding-left: 1.8rem;
+    font-size: 1rem;
+  }
+  #benefits .container ul li::before {
+    font-size: 1.1rem;
+    top: 0.1rem;
+  }
+}
+
     /* Correzione centratura del diagramma su mobile */
     @media (max-width: 640px) {
       .how .container {
@@ -60,7 +100,7 @@
 <body>
 <header>
   <div class="container">
-    <img src="assets/logo.svg" alt="PrivacyFlow logo" class="logo" />
+    <img src="assets/logo.png" alt="PrivacyFlow logo" class="logo" />
     <p class="tagline"><em>La mappatura intelligente dei flussi di dati personali</em></p>
   </div>
 </header>
@@ -76,7 +116,8 @@
   <section id="hero" class="hero">
     <div class="container">
       <h2>Comprendi e controlla i tuoi flussi di dati</h2>
-      <p>PrivacyFlow analizza, compone e visualizza le relazioni tra sistemi, database e fornitori esterni — per una gestione privacy chiara e conforme al GDPR.</p>
+<p>PrivacyFlow automatizza la mappatura dei flussi di dati personali, integrando analisi tecniche e modelli normativi per generare report e diagrammi pronti per audit e compliance.
+    </p>
       <a href="#contact" class="cta-btn">Contattaci</a>
     </div>
   </section>
@@ -84,7 +125,7 @@
   <section id="team" class="features">
     <div class="container">
       <h2>Chi siamo</h2>
-      <p>PrivacyFlow nasce da un team con esperienza in sviluppo software, cybersecurity e data governance. Creiamo strumenti concreti per trasformare la complessità della privacy in pratiche quotidiane, chiare e integrabili nei processi aziendali.</p>
+      <p>PrivacyFlow nasce da un team con esperienza iUn team specializzato che combina know-how tecnologico ed esperienza sul campo per sviluppare applicazioni avanzate nella gestione della privacy e della conformità GDPR.</p>
     </div>
   </section>
 
@@ -92,7 +133,7 @@
     <div class="container">
       <h2>Come funziona PrivacyFlow</h2>
       <img src="assets/flow-diagram.svg" alt="Diagramma flussi PrivacyFlow" class="diagram" />
-      <div class="how-steps">
+      <div class="how-steps"><br>
         <p><strong>Init</strong> — Crea il modello base della mappa dati.</p>
         <p><strong>Scan</strong> — Individua connessioni e trattamenti reali.</p>
         <p><strong>Compose</strong> — Integra risultati e documentazione.</p>
@@ -105,12 +146,12 @@
   <section id="benefits" class="benefits">
     <div class="container">
       <h2>Vantaggi</h2>
-      <ul>
-        <li>Riduzione drastica dei tempi di analisi e audit</li>
-        <li>Maggiore trasparenza nei trattamenti dati</li>
-        <li>Automazione e ripetibilità dei controlli di compliance</li>
-        <li>Conformità costante e verificabile nel tempo</li>
-      </ul>
+          <ul>
+      <li>Mappatura automatica e aggiornata dei flussi di dati</li>
+      <li>Riduzione dei tempi di audit e analisi di compliance</li>
+      <li>Visualizzazione chiara dei trattamenti e delle basi giuridiche</li>
+      <li>Report interattivo per team legali e tecnici</li>
+    </ul>
     </div>
   </section>
 

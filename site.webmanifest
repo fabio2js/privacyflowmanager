@@ -1,0 +1,32 @@
+{
+  "name": "PrivacyFlow",
+  "short_name": "PrivacyFlow",
+  "description": "Mappatura intelligente dei flussi di dati personali. Software per audit e compliance.",
+  "lang": "it-IT",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#DFF4FF",
+  "theme_color": "#01C6C7",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicon.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicon.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
