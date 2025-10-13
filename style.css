@@ -63,7 +63,18 @@ nav a:hover { color: var(--color-accent); }
   color: var(--color-primary);
 }
 
-
+footer {
+  color: #fff;
+ padding: 4rem 0 3rem 0;
+   text-align: center;
+  padding: 1.5rem 0;
+  background: #fff;
+ border-top: 1px solid #eee;
+ color: var(--color-muted);
+  font-size: 0.9rem;
+  overflow: hidden;
+  background: none;
+ }
 /* Header con immagine piccola + riempimento morbido dietro */
 header {
   position: relative;
