@@ -8,8 +8,6 @@
   --color-muted: #666;
 }
 
-
-
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -20,16 +18,7 @@ body {
 }
 
 .container { width: 90%; max-width: 1100px; margin: 0 auto; }
-header {
-  background: var(--color-primary);
-  color: #fff;
-  padding: 2.5rem 0; /* leggermente più alto */
-  text-align: center;
-}
-
-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-header .tagline { font-size: 1.1rem; color: #eaf4ff; }
-
+ 
 nav {
   background: #fff;
   border-bottom: 1px solid #ddd;
@@ -72,193 +61,51 @@ nav a:hover { color: var(--color-accent); }
 }
 .features h2, .how h2, .benefits h2, .contact h2 {
   color: var(--color-primary);
-  margin-bottom: 2rem;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-}
-.card {
-  background: #fff;
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-}
-.card:hover { transform: translateY(-4px); }
-
-.diagram {
-  max-width: 600px;
-  margin: 2rem auto;
-  display: block;
-}
-.logo {
-  width: clamp(340px, 45vw, 520px); /* logo più grande */
-  height: auto;
-  display: block;
-  margin: 0 auto 0.3rem auto;
 }
 
 
-.benefits ul {
-  list-style: none;
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: left;
-}
-.benefits li {
-  margin-bottom: 0.8rem;
-  padding-left: 1.2rem;
+/* Header con immagine piccola + riempimento morbido dietro */
+header {
   position: relative;
-}
-.benefits li::before {
-  content: "✔";
-  color: var(--color-accent);
-  position: absolute;
-  left: 0;
-}
-
-.email {
-  font-size: 1.3rem;
-  color: var(--color-primary);
-  text-decoration: none;
-  font-weight: 700;
-}
-
-footer {
   text-align: center;
-  padding: 1.5rem 0;
-  background: #fff;
-  border-top: 1px solid #eee;
-  color: var(--color-muted);
-  font-size: 0.9rem;
-}
-.how-steps p {
-  margin-bottom: 1rem;
-  max-width: 750px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-  line-height: 1.6;
-  font-size: 0.95rem; /* prima 1.05rem */
-  color: #333;
+  overflow: hidden;
+  /* Layer 1: immagine nitida e piccola centrata
+     Layer 0: gradiente + immagine di riempimento in cover, sfocata */
+  background:
+    url("assets/diagram-bg.png") center top no-repeat,
+    linear-gradient(180deg, rgba(11,94,215,0.12) 0%, rgba(0,184,148,0.08) 100%),
+    url("assets/diagram-bg.png") center top / cover no-repeat;
+  background-size: min(42vw, 320px) auto, auto, cover;
+  background-blend-mode: normal, normal, normal;
+  min-height: clamp(110px, 16vw, 200px);
 }
 
 
-.how-steps strong {
-  color: #0b5ed7;
+
+
+/* ✅ testo sopra */
+header .container {
+  position: relative;
+  z-index: 1;
 }
 
-.cli-note {
-  margin-top: 2rem;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #003a9f;
-}
-section p {
-  font-size: 0.95rem;
+header .site-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-shadow:
+    0 2px 6px rgba(0,0,0,0.25),
+    0 0 18px rgba(0,200,255,0.25);
 }
 
-section h2 {
-  margin-bottom: 1.5rem; /* meno spazio sotto i titoli */
-}
-.tagline {
+header .tagline {
+  color: #e7faff;
+  font-size: 1.15rem;
   font-style: italic;
-  color: #003a9f;
-  font-size: 1.05rem;
-  margin-top: 0.3rem;
-  letter-spacing: 0.2px;
-}
- 
-
-    .diagram {
-      display: block;
-      margin: 0 auto;
-      max-width: 90%;
-    }
-    /* Centra i testi delle sezioni principali */
-    #team .container h2,
-    #team .container p,
-    #how .container h2,
-    #how .container p,
-    #how .container .how-steps p,
-    #benefits .container h2,
- 
-    /* Rimuove rientri */
-    #team .container p,
-    #how .container p,
-    #how .container .how-steps p,
- 
-    /* Correzione centratura del diagramma su mobile */
-    @media (max-width: 640px) {
-      .how .container {
-        padding-left: 0;
-        padding-right: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* centra tutti i figli, inclusa l'immagine */
-      }
-      .how .container .diagram {
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-        height: auto;
-      }
-    }
-
-    @media (max-width: 640px) {
-  #benefits .container ul {
-    padding-left: 1.5rem;      /* ripristina un po’ di spazio per la spunta */
-    text-align: left;          /* riallinea il testo per evitare sovrapposizioni */
-    list-style-position: outside; /* mette la spunta fuori dal testo */
-  }
-  #benefits .container ul li {
-    display: list-item;        /* forza il comportamento corretto della lista */
-  }
+  text-shadow: 0 2px 5px rgba(0,0,0,0.25);
 }
 
-/* Sezione Vantaggi – resa responsive */
-#benefits .container ul {
-  list-style: none; /* Rimuove i bullet predefiniti */
-  padding: 0;
-  margin: 0 auto;
-  max-width: 600px;
-  text-align: left; /* allinea bene su mobile */
-}
+/* Rimozione vecchi override confliggenti (pulizia) conclusa */
 
-#benefits .container ul li {
-  position: relative;
-  padding-left: 2rem; /* spazio per la spunta */
-  margin-bottom: 1rem;
-  line-height: 1.5;
-}
-
-/* Spunta verde come pseudo-elemento */
-#benefits .container ul li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #009e60; /* verde leggibile su sfondo chiaro */
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-/* Migliore leggibilità e centratura su schermi piccoli */
-@media (max-width: 640px) {
-  #benefits .container ul {
-    text-align: left;
-    padding: 0 1rem;
-  }
-  #benefits .container ul li {
-    padding-left: 1.8rem;
-    font-size: 1rem;
-  }
-  #benefits .container ul li::before {
-    font-size: 1.1rem;
-    top: 0.1rem;
-  }
-}
