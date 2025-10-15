@@ -9,7 +9,45 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
+.demo-report {
+  background-color: #f9fcff;
+  padding: 60px 0;
+  text-align: center;
+}
 
+.demo-report h2 {
+  color: #0078d4;
+  margin-bottom: 10px;
+}
+
+.demo-report p {
+  max-width: 700px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.report-preview iframe {
+  max-width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.cta-btn {
+  display: inline-block;
+  background-color: #0078d4;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background-color: #005fa3;
+}
 body {
   font-family: "Inter", sans-serif;
   color: var(--color-text);
