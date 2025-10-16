@@ -6,4 +6,7 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url><loc>https://www.privacyflow.it/blog/</loc></url>
+<url><loc>https://www.privacyflow.it/blog/post-mappatura.html</loc></url>
+<url><loc>https://www.privacyflow.it/blog/post-audit.html</loc></url>
 </urlset>
