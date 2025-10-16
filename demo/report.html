@@ -46,7 +46,9 @@ h1, h2 { color: #0078d4; font-weight: 600; }
 .legend-thirdparty { background-color: #FFF3E0; border-color: #FB8C00; }
 .legend-controller { background-color: #A8E6FF; border-color: #2AA4AD; }
 .legend-processor { background-color: #E0F7FA; border-color: #00ACC1; }
-.legend-subprocessor { background-color: #CCF3FA; border-color: #00BBD6; }
+.legend-subprocessor { background-color: #CCF3FA; border-color: #00BBD6; } 
+.legend-subject { background-color: #E0D7F9; border-color: #9B59B6; }
+
 
 
  .summary {
@@ -316,20 +318,21 @@ body::before {
         <div class="summary-card">
           <h2>📊 Privacy Flow Summary</h2>
           <ul>
-            <li><b>Total nodes:</b> 4</li>
-            <li><b>Total flows:</b> 3</li>
-            <li><b>Controllers:</b> 0</li>
-            <li><b>Processors:</b> 0</li>
-            <li><b>Third-party systems:</b> 1</li>
+            <li><b>Total nodes:</b> 16</li>
+            <li><b>Total flows:</b> 15</li>
+            <li><b>Controllers:</b> 1</li>
+            <li><b>Processors:</b> 2</li>
+            <li><b>Third-party systems:</b> 10</li>
             <li><b>Data stores:</b> 1</li>
             <li><b>Services:</b> 1</li>
+            <li><b>Data Subjects:</b> 1</li>
           </ul>
         </div>
         <div class="pie">
           
     <svg class="pie" viewBox="0 0 140 140" width="160" height="160" aria-label="Role Breakdown">
       <circle cx="70" cy="70" r="60" fill="#f5f5f5" stroke="#ddd" />
-      <path d="M 70 70 L 130.000 70.000 A 60 60 0 0 1 130.000 70.000 Z" fill="#A8E6FF" stroke="#ccc" /><path d="M 70 70 L 130.000 70.000 A 60 60 0 0 1 130.000 70.000 Z" fill="#E0F7FA" stroke="#ccc" /><path d="M 70 70 L 130.000 70.000 A 60 60 0 0 1 40.000 121.962 Z" fill="#F3E5F5" stroke="#ccc" /><path d="M 70 70 L 40.000 121.962 A 60 60 0 0 1 40.000 18.038 Z" fill="#FFF3E0" stroke="#ccc" /><path d="M 70 70 L 40.000 18.038 A 60 60 0 0 1 130.000 70.000 Z" fill="#E3F2FD" stroke="#ccc" />
+      <path d="M 70 70 L 130.000 70.000 A 60 60 0 0 1 125.433 92.961 Z" fill="#A8E6FF" stroke="#ccc" /><path d="M 70 70 L 125.433 92.961 A 60 60 0 0 1 92.961 125.433 Z" fill="#E0F7FA" stroke="#ccc" /><path d="M 70 70 L 92.961 125.433 A 60 60 0 0 1 70.000 130.000 Z" fill="#F3E5F5" stroke="#ccc" /><path d="M 70 70 L 70.000 130.000 A 60 60 0 1 1 112.426 27.574 Z" fill="#FFF3E0" stroke="#ccc" /><path d="M 70 70 L 112.426 27.574 A 60 60 0 0 1 125.433 47.039 Z" fill="#E3F2FD" stroke="#ccc" /><path d="M 70 70 L 125.433 47.039 A 60 60 0 0 1 130.000 70.000 Z" fill="#EDE7F6" stroke="#ccc" />
     </svg>
     
           
@@ -339,7 +342,11 @@ body::before {
       <div style="display:flex;align-items:center;gap:6px;"><span style="display:inline-block;width:12px;height:12px;background:#F3E5F5;border:1px solid #bbb;"></span>Datastores</div>
       <div style="display:flex;align-items:center;gap:6px;"><span style="display:inline-block;width:12px;height:12px;background:#FFF3E0;border:1px solid #bbb;"></span>Third-parties</div>
       <div style="display:flex;align-items:center;gap:6px;"><span style="display:inline-block;width:12px;height:12px;background:#E3F2FD;border:1px solid #bbb;"></span>Services</div>
-    </div>
+ <div style="display:flex;align-items:center;gap:6px;">
+  <span style="display:inline-block;width:12px;height:12px;background:#EDE7F6;border:1px solid #bbb;"></span>
+  Data subjects
+</div>
+     </div>
     
         </div>
       </div>
@@ -348,9 +355,9 @@ body::before {
     <section class="gdpr-roles" style="margin:20px 0 30px;">
       <h2>Ruoli GDPR</h2>
       <p>Elenco dei soggetti identificati nel modello come titolari, responsabili o sub-responsabili del trattamento.</p>
-      <table><thead><tr><th>name</th><th>role</th><th>region</th><th>dpo</th><th>lawful basis</th></tr></thead><tbody><tr><td>Customer Portal</td><td>controller</td><td>EU</td><td></td><td>contract</td></tr><tr><td>Primary Database</td><td>controller</td><td>EU</td><td></td><td>contract</td></tr><tr><td>Email Service</td><td>processor</td><td>US</td><td></td><td>consent</td></tr></tbody></table>
+      <table><thead><tr><th>name</th><th>role</th><th>region</th><th>dpo</th><th>lawful basis</th></tr></thead><tbody><tr><td>Utente / Cliente</td><td>subject</td><td>EU</td><td></td><td></td></tr><tr><td>ACME Srl</td><td>controller</td><td>EU</td><td>privacy@acme.it</td><td>contract, legal_obligation</td></tr><tr><td>Data Processor SRL</td><td>processor</td><td>EU</td><td></td><td>contract</td></tr><tr><td>Sub Processor LTD</td><td>sub_processor</td><td>UK</td><td></td><td>contract</td></tr></tbody></table>
     </section>
-    
+    <div style='background:#e8f8ff;border-left:5px solid #01C6C7;padding:10px;margin:16px 0 24px;border-radius:8px;'><b>Dominio analizzato:</b> <a href='https://www.register.it' target='_blank'>www.register.it</a></div>
 
  
 
@@ -360,23 +367,75 @@ body::before {
                 <h2>Diagramma dei flussi</h2>
                 <div id="mermaid-target-1" class="mermaid" style="text-align:center;margin:10px auto;width:95%;max-width:1400px;"></div>
                 <script class="mermaid-code" type="text/plain" data-target="mermaid-target-1">flowchart LR
-    data_subject["Utente / Cliente"]
-    webapp["Customer Portal"]
-    db_main["Primary Database"]
-    notif["Email Service"]
+class data_subject subject;
+class acme controller;
+class dp_srl processor;
+class db_main datastore;
+class analytics_cloud thirdparty;
+class subproc_ltd sub_processor;
+class www_register_it service;
+class code_jquery_com thirdparty;
+class fonts_googleapis_com thirdparty;
+class fonts_gstatic_com thirdparty;
+class gmpg_org thirdparty;
+class maxcdn_bootstrapcdn_com thirdparty;
+class s_w_org thirdparty;
+class srv_cmp_teamblue_services thirdparty;
+class widget_trustpilot_com thirdparty;
+class www_googletagmanager_com thirdparty;
+    data_subject["data_subject"]
     acme["acme"]
-    data_subject -->|"servizio_principale - contract"| acme
-    webapp -->|"account_management - contract"| db_main
-    webapp -->|"notifications - consent"| notif
+    data_subject -->|"registration - consent"| acme
+    dp_srl["dp_srl"]
+    acme -->|"account_management - contract"| dp_srl
+    db_main["db_main"]
+    dp_srl -->|"account_storage - contract"| db_main
+    analytics_cloud["analytics_cloud"]
+    dp_srl -->|"usage_analytics - legitimate_interest"| analytics_cloud
+    subproc_ltd["subproc_ltd"]
+    dp_srl -->|"data_backup - contract"| subproc_ltd
+    db_main -->|"reporting - legal_obligation"| acme
+    www_register_it["www_register_it"]
+    code_jquery_com["code_jquery_com"]
+    www_register_it -->|"resource_request - legitimate_interest"| code_jquery_com
+    fonts_googleapis_com["fonts_googleapis_com"]
+    www_register_it -->|"resource_request - legitimate_interest"| fonts_googleapis_com
+    fonts_gstatic_com["fonts_gstatic_com"]
+    www_register_it -->|"resource_request - legitimate_interest"| fonts_gstatic_com
+    gmpg_org["gmpg_org"]
+    www_register_it -->|"resource_request - legitimate_interest"| gmpg_org
+    maxcdn_bootstrapcdn_com["maxcdn_bootstrapcdn_com"]
+    www_register_it -->|"resource_request - legitimate_interest"| maxcdn_bootstrapcdn_com
+    s_w_org["s_w_org"]
+    www_register_it -->|"resource_request - legitimate_interest"| s_w_org
+    srv_cmp_teamblue_services["srv_cmp_teamblue_services"]
+    www_register_it -->|"resource_request - legitimate_interest"| srv_cmp_teamblue_services
+    widget_trustpilot_com["widget_trustpilot_com"]
+    www_register_it -->|"resource_request - legitimate_interest"| widget_trustpilot_com
+    www_googletagmanager_com["www_googletagmanager_com"]
+    www_register_it -->|"resource_request - legitimate_interest"| www_googletagmanager_com
 classDef service fill:#E3F2FD,stroke:#1E88E5,color:#0D47A1;
 classDef datastore fill:#F3E5F5,stroke:#8E24AA,color:#4A148C;
 classDef thirdparty fill:#FFF3E0,stroke:#FB8C00,color:#E65100;
 classDef processor fill:#E0F7FA,stroke:#00ACC1,color:#006064;
 classDef controller fill:#A8E6FF,stroke:#2AA4AD,color:#006064;
+classDef subject fill:#EDE7F6,stroke:#B388FF,color:#4A148C;
 class data_subject subject;
-class webapp controller;
-class db_main controller;
-class notif processor;</script>
+class acme controller;
+class dp_srl processor;
+class db_main datastore;
+class analytics_cloud thirdparty;
+class subproc_ltd sub_processor;
+class www_register_it service;
+class code_jquery_com thirdparty;
+class fonts_googleapis_com thirdparty;
+class fonts_gstatic_com thirdparty;
+class gmpg_org thirdparty;
+class maxcdn_bootstrapcdn_com thirdparty;
+class s_w_org thirdparty;
+class srv_cmp_teamblue_services thirdparty;
+class widget_trustpilot_com thirdparty;
+class www_googletagmanager_com thirdparty;</script>
                 <div class="legend">
                   <div class="legend-item"><div class="legend-box legend-service"></div>Servizio interno</div>
                   <div class="legend-item"><div class="legend-box legend-datastore"></div>Archivio dati</div>
@@ -384,6 +443,8 @@ class notif processor;</script>
                   <div class="legend-item"><div class="legend-box legend-controller"></div>Titolare del trattamento</div>
                   <div class="legend-item"><div class="legend-box legend-processor"></div>Responsabile del trattamento</div>
                   <div class="legend-item"><div class="legend-box legend-subprocessor"></div>Sub-responsabile del trattamento</div>
+                    <div class="legend-item"><div class="legend-box legend-subject"></div>Interessato / Data Subject</div>
+
                 </div>
               </section>
             </div>
@@ -392,15 +453,15 @@ class notif processor;</script>
 
 <section id="nodes-section">
   <h2>Nodi</h2>
-  <table><thead><tr><th>id</th><th>name</th><th>type (Technical)</th></tr></thead><tbody><tr><td>data_subject</td><td>Utente / Cliente</td><td>subject</td></tr><tr><td>webapp</td><td>Customer Portal</td><td>service</td></tr><tr><td>db_main</td><td>Primary Database</td><td>datastore</td></tr><tr><td>notif</td><td>Email Service</td><td>thirdparty</td></tr></tbody></table>
+  <table><thead><tr><th>id</th><th>name</th><th>type (Technical)</th></tr></thead><tbody><tr><td>data_subject</td><td>Utente / Cliente</td><td>subject</td></tr><tr><td>acme</td><td>ACME Srl</td><td>controller</td></tr><tr><td>dp_srl</td><td>Data Processor SRL</td><td>processor</td></tr><tr><td>db_main</td><td>Primary Database</td><td>datastore</td></tr><tr><td>analytics_cloud</td><td>Analytics Cloud</td><td>thirdparty</td></tr><tr><td>subproc_ltd</td><td>Sub Processor LTD</td><td>sub_processor</td></tr><tr><td>www_register_it</td><td>www.register.it</td><td>service</td></tr><tr><td>code_jquery_com</td><td>code.jquery.com</td><td>thirdparty</td></tr><tr><td>fonts_googleapis_com</td><td>fonts.googleapis.com</td><td>thirdparty</td></tr><tr><td>fonts_gstatic_com</td><td>fonts.gstatic.com</td><td>thirdparty</td></tr><tr><td>gmpg_org</td><td>gmpg.org</td><td>thirdparty</td></tr><tr><td>maxcdn_bootstrapcdn_com</td><td>maxcdn.bootstrapcdn.com</td><td>thirdparty</td></tr><tr><td>s_w_org</td><td>s.w.org</td><td>thirdparty</td></tr><tr><td>srv_cmp_teamblue_services</td><td>srv.cmp-teamblue.services</td><td>thirdparty</td></tr><tr><td>widget_trustpilot_com</td><td>widget.trustpilot.com</td><td>thirdparty</td></tr><tr><td>www_googletagmanager_com</td><td>www.googletagmanager.com</td><td>thirdparty</td></tr></tbody></table>
 </section>
 
 <h2>Flussi</h2>
-<table><thead><tr><th>source</th><th>target</th><th>purpose</th><th>lawful basis</th></tr></thead><tbody><tr><td>data_subject</td><td>acme</td><td>servizio_principale</td><td>contract</td></tr><tr><td>webapp</td><td>db_main</td><td>account_management</td><td>contract</td></tr><tr><td>webapp</td><td>notif</td><td>notifications</td><td>consent</td></tr></tbody></table>
+<table><thead><tr><th>source</th><th>target</th><th>purpose</th><th>lawful basis</th></tr></thead><tbody><tr><td>data_subject</td><td>acme</td><td>registration</td><td>consent</td></tr><tr><td>acme</td><td>dp_srl</td><td>account_management</td><td>contract</td></tr><tr><td>dp_srl</td><td>db_main</td><td>account_storage</td><td>contract</td></tr><tr><td>dp_srl</td><td>analytics_cloud</td><td>usage_analytics</td><td>legitimate_interest</td></tr><tr><td>dp_srl</td><td>subproc_ltd</td><td>data_backup</td><td>contract</td></tr><tr><td>db_main</td><td>acme</td><td>reporting</td><td>legal_obligation</td></tr><tr><td>www_register_it</td><td>code_jquery_com</td><td>resource_request</td><td>legitimate_interest</td></tr><tr><td>www_register_it</td><td>fonts_googleapis_com</td><td>resource_request</td><td>legitimate_interest</td></tr><tr><td>www_register_it</td><td>fonts_gstatic_com</td><td>resource_request</td><td>legitimate_interest</td></tr><tr><td>www_register_it</td><td>gmpg_org</td><td>resource_request</td><td>legitimate_interest</td></tr><tr><td>www_register_it</td><td>maxcdn_bootstrapcdn_com</td><td>resource_request</td><td>legitimate_interest</td></tr><tr><td>www_register_it</td><td>s_w_org</td><td>resource_request</td><td>legitimate_interest</td></tr><tr><td>www_register_it</td><td>srv_cmp_teamblue_services</td><td>resource_request</td><td>legitimate_interest</td></tr><tr><td>www_register_it</td><td>widget_trustpilot_com</td><td>resource_request</td><td>legitimate_interest</td></tr><tr><td>www_register_it</td><td>www_googletagmanager_com</td><td>resource_request</td><td>legitimate_interest</td></tr></tbody></table>
 
  
 <div class="footer">
-Generato il 2025-10-16 13:36:02
+Generato il 2025-10-16 15:06:13
 </div>
 <p style="font-size:12px; text-align:center; color:#666;">
 PrivacyFlow 2025 PrivacyFlow Labs – All rights reserved.<br>
