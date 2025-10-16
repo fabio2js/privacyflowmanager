@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Documentazione – PrivacyFlow</title>
+  <meta name="description" content="Guida ufficiale all’uso di PrivacyFlow: comandi CLI, modelli YAML, licenze e output di report.">
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    main { padding: 3rem 1rem; }
+    section { margin-bottom: 3rem; }
+    h1, h2, h3 { color: var(--color-primary); }
+    pre, code {
+      background: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: monospace;
+    }
+    pre {
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1em 0;
+    }
+    code { padding: 2px 4px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th { background: #f0f0f0; }
+    nav.local {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.5rem;
+      text-align: center;
+    }
+    nav.local a {
+      color: var(--color-primary);
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 600;
+    }
+    nav.local a:hover { color: var(--color-accent); }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <h1 class="site-title">Documentazione PrivacyFlow</h1>
+    <p class="tagline"><em>Guida all’utilizzo e integrazione CLI</em></p>
+  </div>
+</header>
+
+<nav class="local">
+  <a href="#intro">Introduzione</a>
+  <a href="#cli">Comandi CLI</a>
+  <a href="#yaml">Esempio YAML</a>
+  <a href="#output">Output</a>
+  <a href="#licenze">Licenze</a>
+</nav>
+
+<main class="container">
+  <section id="intro">
+    <h2>Introduzione</h2>
+    <p>
+      PrivacyFlow è un toolkit per mappare automaticamente i flussi di dati personali,
+      documentare i trattamenti e generare report di conformità GDPR.
+      Si integra facilmente in pipeline di sviluppo e ambienti DevSecOps.
+    </p>
+  </section>
+
+  <section id="cli">
+    <h2>Comandi CLI</h2>
+    <p>Ecco una panoramica dei comandi principali:</p>
+
+    <h3>Visualizzare tutti i comandi</h3>
+    <pre><code>privacy-flow --help</code></pre>
+
+    <h3>Eseguire una pipeline completa</h3>
+    <pre><code>privacy-flow init
+privacy-flow scan https://www.example.com -o out
+privacy-flow compose privacy.yaml out/flowmap.yaml -o out
+privacy-flow render out/merged/merged.yaml
+    </code></pre>
+
+    <h3>Verificare la licenza attiva</h3>
+    <pre><code>privacy-flow license</code></pre>
+  </section>
+
+  <section id="yaml">
+    <h2>Esempio di file <code>privacy.yaml</code></h2>
+    <pre><code>
+nodes:
+  - id: data_subject
+    name: Utente / Cliente
+    type: subject
+    region: EU
+
+  - id: acme
+    name: ACME Srl
+    type: controller
+    region: EU
+    dpo: privacy@acme.it
+    lawful_bases: [contract, legal_obligation]
+
+  - id: dp_srl
+    name: Data Processor SRL
+    type: processor
+    region: EU
+    lawful_bases: [contract]
+
+flows:
+  - source: data_subject
+    target: acme
+    purpose: registration
+    lawful_basis: consent
+
+  - source: acme
+    target: dp_srl
+    purpose: account_management
+    lawful_basis: contract
+    </code></pre>
+  </section>
+
+  <section id="output">
+    <h2>Output generato</h2>
+    <p>PrivacyFlow produce automaticamente file di report e diagrammi.</p>
+    <table>
+      <thead>
+        <tr><th>File</th><th>Descrizione</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>flowmap.md</code></td><td>Diagramma dei flussi in formato Mermaid</td></tr>
+        <tr><td><code>report.html</code></td><td>Report interattivo con grafici e ruoli GDPR</td></tr>
+        <tr><td><code>merged.yaml</code></td><td>Modello consolidato per audit o versioning</td></tr>
+      </tbody>
+    </table>
+    <pre><code>
+Totale nodi: 16
+Controller: 1
+Processor: 2
+Third-party systems: 10
+Data stores: 1
+Data subjects: 1
+    </code></pre>
+  </section>
+
+  <section id="licenze">
+    <h2>Licenze</h2>
+    <table>
+      <thead>
+        <tr><th>Edizione</th><th>Descrizione</th><th>Watermark</th><th>Attivazione</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Community</td><td>Uso gratuito per test e audit interni</td><td>Sì</td><td>Integrata</td></tr>
+        <tr><td>Enterprise</td><td>Branding personalizzato, watermark rimosso, licenza RSA</td><td>No</td><td>File license.json</td></tr>
+      </tbody>
+    </table>
+    <h3>Visualizzare informazioni licenza</h3>
+    <pre><code>privacy-flow license</code></pre>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 PrivacyFlow Labs – Tutti i diritti riservati</p>
+</footer>
+</body>
+</html>
