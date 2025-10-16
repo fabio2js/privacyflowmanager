@@ -132,16 +132,28 @@
     }
   }
   </script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.querySelector(".menu-toggle");
-  const menu = document.querySelector(".nav-links");
-  toggle.addEventListener("click", () => {
-    menu.classList.toggle("show");
-    toggle.setAttribute("aria-expanded", menu.classList.contains("show"));
+<script defer>
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  const links = document.querySelectorAll('.nav-links a');
+
+  // Toggle apertura/chiusura
+  toggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('show');
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Chiudi menu dopo click su una voce
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('show');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
   });
 });
 </script>
+
 </head>
 <body>
 <header>
