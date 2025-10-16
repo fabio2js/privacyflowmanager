@@ -56,25 +56,117 @@ body {
 }
 
 .container { width: 90%; max-width: 1100px; margin: 0 auto; }
- 
-nav {
-  background: #fff;
-  border-bottom: 1px solid #ddd;
-}
-nav ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 1rem;
-}
-nav a {
-  text-decoration: none;
-  color: var(--color-primary);
-  font-weight: 400;
-  margin: 0 1rem;
-}
-nav a:hover { color: var(--color-accent); }
 
+/* Header con immagine piccola + riempimento morbido dietro */
+header {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  background:
+    url("assets/diagram-bg.png") center top no-repeat,
+    linear-gradient(180deg, rgba(11,94,215,0.12) 0%, rgba(0,184,148,0.08) 100%),
+    url("assets/diagram-bg.png") center top / cover no-repeat;
+  background-size: min(42vw, 320px) auto, auto, cover;
+  background-blend-mode: normal, normal, normal;
+  min-height: clamp(110px, 16vw, 200px);
+}
+
+/* ✅ testo sopra */
+header .container {
+  position: relative;
+  z-index: 1;
+}
+
+header .site-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-shadow:
+    0 2px 6px rgba(0,0,0,0.25),
+    0 0 18px rgba(0,200,255,0.25);
+}
+
+header .tagline {
+  color: #e7faff;
+  font-size: 1.15rem;
+  font-style: italic;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.25);
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: #0b5ed7;
+  color: white;
+  padding: 0.5rem 1rem;
+  z-index: 1000; /* resta sopra all'header */
+}
+
+.nav-container {
+  position: relative; /* riferimento per il menu assoluto */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Bottone hamburger */
+.menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: none; /* desktop: nascosto */
+  z-index: 1200;
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* mostra bottone hamburger */
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #0b5ed7;
+    position: absolute;
+    top: 52px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1100;
+  }
+
+  .nav-links.show {
+    display: flex; /* mostra menu quando attivo */
+  }
+
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
+}
+
+/* Sezioni principali */
 .hero {
   background: linear-gradient(120deg, #0b5ed7 0%, #00b894 100%);
   color: white;
@@ -103,58 +195,133 @@ nav a:hover { color: var(--color-accent); }
 
 footer {
   color: #fff;
- padding: 4rem 0 3rem 0;
-   text-align: center;
   padding: 1.5rem 0;
   background: #fff;
- border-top: 1px solid #eee;
- color: var(--color-muted);
+  border-top: 1px solid #eee;
+  color: var(--color-muted);
   font-size: 0.9rem;
   overflow: hidden;
   background: none;
- }
-/* Header con immagine piccola + riempimento morbido dietro */
-header {
+}
+/* ===== NAVBAR FINALE FIX ===== */
+nav.navbar {
+  position: sticky;
+  top: 0;
+  background-color: #0b5ed7 !important;
+  color: #fff;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Struttura flessibile: logo a sinistra, menu centrato, hamburger a destra */
+nav.navbar .nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centrato di base */
   position: relative;
-  text-align: center;
-  overflow: hidden;
-  /* Layer 1: immagine nitida e piccola centrata
-     Layer 0: gradiente + immagine di riempimento in cover, sfocata */
-  background:
-    url("assets/diagram-bg.png") center top no-repeat,
-    linear-gradient(180deg, rgba(11,94,215,0.12) 0%, rgba(0,184,148,0.08) 100%),
-    url("assets/diagram-bg.png") center top / cover no-repeat;
-  background-size: min(42vw, 320px) auto, auto, cover;
-  background-blend-mode: normal, normal, normal;
-  min-height: clamp(110px, 16vw, 200px);
 }
 
-
-
-
-/* ✅ testo sopra */
-header .container {
-  position: relative;
-  z-index: 1;
+nav.navbar .brand {
+  position: absolute;
+  left: 1rem;
+  font-weight: 700;
+  color: #fff;
+  font-size: 1.1rem;
 }
 
-header .site-title {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  margin-bottom: 0.5rem;
-  color: #ffffff;
-  text-shadow:
-    0 2px 6px rgba(0,0,0,0.25),
-    0 0 18px rgba(0,200,255,0.25);
+/* Menu centrato orizzontale */
+nav.navbar .nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.2rem;
 }
 
-header .tagline {
-  color: #e7faff;
-  font-size: 1.15rem;
-  font-style: italic;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.25);
+nav.navbar .nav-links a {
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 500;
 }
 
-/* Rimozione vecchi override confliggenti (pulizia) conclusa */
+nav.navbar .nav-links a:hover {
+  color: #00d2a8;
+}
+
+/* Bottone hamburger (solo mobile, allineato a destra) */
+nav.navbar .menu-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  display: none; /* desktop nascosto */
+  position: absolute;
+  right: 1rem;
+}
+
+/* --- Mobile --- */
+@media (max-width: 900px) {
+  /* Mostra hamburger */
+  nav.navbar .menu-toggle {
+    display: block !important;
+  }
+
+  /* Nascondi le voci finché non si apre */
+  nav.navbar .nav-links {
+    display: none !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #0b5ed7;
+    text-align: center;
+    padding: 0.75rem 0;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Quando attivo (.show), mostra il menu */
+  nav.navbar .nav-links.show {
+    display: flex !important;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  nav.navbar .nav-links li {
+    margin: 0.5rem 0;
+  }
+}
+
+ /* Nasconde il brand nel menu su desktop */
+nav.navbar .brand {
+  display: none;
+}
+
+/* Mostra il brand solo su mobile accanto al menu hamburger */
+@media (max-width: 900px) {
+  nav.navbar .brand {
+    display: block;
+    position: absolute;
+    left: 1rem;
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.1rem;
+  }
+}
+
+/* Footer centrato */
+footer {
+  text-align: center !important;
+  width: 100%;
+  margin: 0 auto;
+}
 
