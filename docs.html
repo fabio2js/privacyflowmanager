@@ -75,6 +75,34 @@
       Si integra facilmente in pipeline di sviluppo e ambienti DevSecOps.
     </p>
   </section>
+  <section id="install">
+    <h2>Installazione</h2>
+    <p>
+      PrivacyFlow è distribuito come pacchetto Python su <a href="https://pypi.org/project/privacyflow/" target="_blank">PyPI</a>.
+      Può essere installato in qualsiasi ambiente con Python ≥ 3.10.
+    </p>
+
+    <h3>Installazione base</h3>
+    <pre><code>pip install privacyflow</code></pre>
+
+    <h3>Aggiornamento alla versione più recente</h3>
+    <pre><code>pip install --upgrade privacyflow</code></pre>
+
+    <h3>Verifica dell’installazione</h3>
+    <pre><code>privacy-flow --version</code></pre>
+
+    <h3>Installazione in ambiente virtuale (consigliata)</h3>
+    <pre><code>python3 -m venv venv
+source venv/bin/activate      # su Linux / macOS
+venv\Scripts\activate         # su Windows
+pip install privacyflow
+    </code></pre>
+
+    <p>
+      Dopo l’installazione, il comando <code>privacy-flow</code> sarà disponibile nel terminale.
+      È possibile eseguire l’utility ovunque per inizializzare progetti, eseguire scansioni e generare report di compliance.
+    </p>
+  </section>
 
   <section id="cli">
     <h2>Comandi CLI</h2>
