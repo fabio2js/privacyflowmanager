@@ -71,7 +71,7 @@ header {
   min-height: clamp(110px, 16vw, 200px);
 }
 
-/* ✅ testo sopra */
+/*  testo sopra */
 header .container {
   position: relative;
   z-index: 1;
@@ -83,9 +83,7 @@ header .site-title {
   letter-spacing: -0.5px;
   margin-bottom: 0.5rem;
   color: #ffffff;
-  text-shadow:
-    0 2px 6px rgba(0,0,0,0.25),
-    0 0 18px rgba(0,200,255,0.25);
+ 
 }
 
 header .tagline {
@@ -93,6 +91,11 @@ header .tagline {
   font-size: 1.15rem;
   font-style: italic;
   text-shadow: 0 2px 5px rgba(0,0,0,0.25);
+}
+
+.site-title {
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+
 }
 
 /* ===== NAVBAR ===== */
@@ -324,4 +327,4 @@ footer {
   width: 100%;
   margin: 0 auto;
 }
-
+ 
