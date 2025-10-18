@@ -66,6 +66,21 @@ header {
   overflow: hidden;
 }
 
+/* Blog: header con immagine di sfondo */
+body.blog header {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.35) 100%),
+    url("assets/diagram-bg.png") center / cover no-repeat;
+  color: #fff;
+}
+body.blog header h1,
+body.blog header .site-title,
+body.blog header .tagline,
+body.blog header a { color: #fff !important; }
+body.blog header h1,
+body.blog header .site-title { text-shadow: 0 2px 6px rgba(0,0,0,0.25); }
+body.blog header .tagline { color: #eaf5ff !important; text-shadow: 0 1px 4px rgba(0,0,0,0.15); }
+
 /*  testo sopra */
 header .container {
   position: relative;
