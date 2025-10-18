@@ -65,6 +65,7 @@
   <a href="#output">Output</a>
   <a href="#render">Render</a>
   <a href="#licenze">Licenze</a>
+  <a href="#gui">Model Builder GUI</a>
 </nav>
 
 <main class="container">
@@ -277,6 +278,56 @@ Data subjects: 1
     </table>
     <h3>Visualizzare informazioni licenza</h3>
     <pre><code>privacy-flow license</code></pre>
+  </section>
+  <section id="gui">
+    <h2>PrivacyFlow Model Builder GUI</h2>
+    <p>
+      <strong>PrivacyFlow Model Builder</strong> è l’applicazione desktop ufficiale per creare e modificare 
+      i modelli <code>privacy.yaml</code> tramite un’interfaccia grafica intuitiva.
+      Permette di definire titolari, fornitori, flussi e basi giuridiche in modo visuale,
+      senza modificare manualmente il codice YAML.
+    </p>
+
+    <h3>Download</h3>
+    <p>
+      Scarica l’ultima versione dal repository ufficiale GitHub:
+    </p>
+    <p>
+      <a href="https://github.com/fabio2js/privacyflow-gui/releases/download/v1.1.0/privacyflow-gui-dist.zip"
+         target="_blank" class="cta-btn">
+         Scarica PrivacyFlow GUI v1.1.0
+      </a>
+    </p>
+
+    <h3>Istruzioni di esecuzione</h3>
+    <p>
+      Dopo aver estratto l’archivio ZIP, puoi avviare il programma in due modi:
+    </p>
+
+    <h4>Windows</h4>
+    <pre><code>PrivacyFlow-GUI-Start.bat</code></pre>
+
+    <h4>Linux / macOS</h4>
+    <pre><code>java -jar ./privacyflow-gui-1.0.0-jar-with-dependencies.jar</code></pre>
+
+    <p>
+      Non è richiesta alcuna installazione di Java: la versione Windows include una 
+      <strong>Java Runtime Environment integrata</strong>.
+    </p>
+
+    <h3>Funzionalità principali</h3>
+    <ul>
+      <li>Creazione e modifica dei nodi (titolari, fornitori, archivi, soggetti, ecc.).</li>
+      <li>Gestione visuale dei flussi di trattamento e delle basi giuridiche.</li>
+      <li>Anteprima automatica del modello YAML generato.</li>
+      <li>Integrazione diretta con la CLI <code>privacy-flow render</code> per generare i report HTML.</li>
+    </ul>
+
+    <p>
+      Per la generazione dei report, assicurati che <code>privacy-flow</code> sia installato nel tuo ambiente Python,
+      quindi utilizza il pulsante “Genera report” nella GUI oppure esegui:
+    </p>
+    <pre><code>privacy-flow render privacy.yaml -o out</code></pre>
   </section>
 
 </main>

@@ -95,6 +95,7 @@ header .site-title {
   color: var(--color-primary);
   text-shadow: none;
 }
+ 
 
 header  {
   color: #003a9f;
@@ -343,3 +344,38 @@ footer {
   margin: 0 auto;
 }
  
+#gui {
+  background-color: #f9fcff;
+  padding: 60px 0;
+}
+
+#gui h2 {
+  color: #0b5ed7;
+  margin-bottom: 1rem;
+}
+
+#gui pre {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0.8rem;
+  overflow-x: auto;
+}
+
+#gui ul {
+  margin: 1rem 0 1.5rem 1.5rem;
+  text-align: left;
+}
+
+#gui .cta-btn {
+  background-color: #0b5ed7;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+#gui .cta-btn:hover {
+  background-color: #094bb0;
+}
