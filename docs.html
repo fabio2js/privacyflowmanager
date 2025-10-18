@@ -63,10 +63,12 @@
   <a href="#cli">Comandi CLI</a>
   <a href="#yaml">Esempio YAML</a>
   <a href="#output">Output</a>
+  <a href="#render">Render</a>
   <a href="#licenze">Licenze</a>
 </nav>
 
 <main class="container">
+
   <section id="intro">
     <h2>Installazione</h2>
     <p>
@@ -75,8 +77,8 @@
       Si integra facilmente in pipeline di sviluppo e ambienti DevSecOps.
     </p>
   </section>
+
   <section id="install">
-     
     <p>
       PrivacyFlow è distribuito come pacchetto Python su <a href="https://pypi.org/project/privacyflow/" target="_blank">PyPI</a>.
       Può essere installato in qualsiasi ambiente con Python ≥ 3.10.
@@ -125,41 +127,43 @@ privacy-flow render out/merged/merged.yaml
   <section id="yaml">
     <h2>Esempio di file <code>privacy.yaml</code></h2>
     <h3>Struttura del file <code>privacy.yaml</code></h3>
-<p>
-Il file <code>privacy.yaml</code> definisce la mappa dei trattamenti dei dati personali,
-suddivisa in due sezioni principali: <code>nodes</code> e <code>flows</code>.
-</p>
-<h4>Nodi (<code>nodes</code>)</h4>
-<table>
-  <thead>
-    <tr><th>Campo</th><th>Descrizione</th><th>Esempio</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>id</code></td><td>Identificatore univoco del nodo</td><td><code>acme</code></td></tr>
-    <tr><td><code>name</code></td><td>Nome leggibile del soggetto o sistema</td><td><code>ACME Srl</code></td></tr>
-    <tr><td><code>type</code></td><td>Ruolo GDPR o categoria (es. <code>controller</code>, <code>processor</code>, <code>thirdparty</code>, <code>datastore</code>, <code>subject</code>)</td><td><code>controller</code></td></tr>
-    <tr><td><code>region</code></td><td>Area geografica o giurisdizione</td><td><code>EU</code></td></tr>
-    <tr><td><code>dpo</code></td><td>Contatto del Data Protection Officer (facoltativo)</td><td><code>privacy@acme.it</code></td></tr>
-    <tr><td><code>lawful_bases</code></td><td>Basi giuridiche applicabili al nodo</td><td><code>[contract, legal_obligation]</code></td></tr>
-  </tbody>
-</table>
+    <p>
+      Il file <code>privacy.yaml</code> definisce la mappa dei trattamenti dei dati personali,
+      suddivisa in due sezioni principali: <code>nodes</code> e <code>flows</code>.
+    </p>
+    <h4>Nodi (<code>nodes</code>)</h4>
+    <table>
+      <thead>
+        <tr><th>Campo</th><th>Descrizione</th><th>Esempio</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>id</code></td><td>Identificatore univoco del nodo</td><td><code>acme</code></td></tr>
+        <tr><td><code>name</code></td><td>Nome leggibile del soggetto o sistema</td><td><code>ACME Srl</code></td></tr>
+        <tr><td><code>type</code></td><td>Ruolo GDPR o categoria (es. <code>controller</code>, <code>processor</code>, <code>thirdparty</code>, <code>datastore</code>, <code>subject</code>)</td><td><code>controller</code></td></tr>
+        <tr><td><code>region</code></td><td>Area geografica o giurisdizione</td><td><code>EU</code></td></tr>
+        <tr><td><code>dpo</code></td><td>Contatto del Data Protection Officer (facoltativo)</td><td><code>privacy@acme.it</code></td></tr>
+        <tr><td><code>lawful_bases</code></td><td>Basi giuridiche applicabili al nodo</td><td><code>[contract, legal_obligation]</code></td></tr>
+      </tbody>
+    </table>
 
-<h4>Flussi (<code>flows</code>)</h4>
-<table>
-  <thead>
-    <tr><th>Campo</th><th>Descrizione</th><th>Esempio</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>source</code></td><td>Nodo di origine del dato</td><td><code>data_subject</code></td></tr>
-    <tr><td><code>target</code></td><td>Destinatario o sistema di destinazione</td><td><code>acme</code></td></tr>
-    <tr><td><code>purpose</code></td><td>Finalità del trattamento</td><td><code>registration</code></td></tr>
-    <tr><td><code>lawful_basis</code></td><td>Base giuridica del singolo flusso</td><td><code>consent</code></td></tr>
-  </tbody>
-</table>
+    <h4>Flussi (<code>flows</code>)</h4>
+    <table>
+      <thead>
+        <tr><th>Campo</th><th>Descrizione</th><th>Esempio</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>source</code></td><td>Nodo di origine del dato</td><td><code>data_subject</code></td></tr>
+        <tr><td><code>target</code></td><td>Destinatario o sistema di destinazione</td><td><code>acme</code></td></tr>
+        <tr><td><code>purpose</code></td><td>Finalità del trattamento</td><td><code>registration</code></td></tr>
+        <tr><td><code>lawful_basis</code></td><td>Base giuridica del singolo flusso</td><td><code>consent</code></td></tr>
+      </tbody>
+    </table>
 
-<p>
-Il formato YAML è leggibile e facilmente versionabile.  
-Nella versione Enterprise può essere esteso con campi personalizzati.
+    <p>
+      Il formato YAML è leggibile e facilmente versionabile.  
+      Nella versione Enterprise può essere esteso con campi personalizzati.
+    </p>
+
     <pre><code>
 nodes:
   - id: data_subject
@@ -201,7 +205,7 @@ flows:
         <tr><th>File</th><th>Descrizione</th></tr>
       </thead>
       <tbody>
-        <tr><td><code>flowmap.md</code></td><td>Diagramma dei flussi in formato Mermaid</td></tr>
+        <tr><td><code>flowmap.md</code></td><td>Diagramma dei flussi in formato Markdown (Mermaid)</td></tr>
         <tr><td><code>report.html</code></td><td>Report interattivo con grafici e ruoli GDPR</td></tr>
         <tr><td><code>merged.yaml</code></td><td>Modello consolidato per audit o versioning</td></tr>
       </tbody>
@@ -214,6 +218,50 @@ Third-party systems: 10
 Data stores: 1
 Data subjects: 1
     </code></pre>
+  </section>
+
+  <section id="render">
+    <h2>Comando <code>render</code></h2>
+    <p>
+      Il comando <code>privacy-flow render</code> trasforma un modello di flusso dei dati personali
+      (<code>privacy.yaml</code> o <code>.json</code>) in una serie di output leggibili e documentabili.
+      Tra questi: un <strong>report HTML</strong> interattivo, un <strong>diagramma in formato Mermaid</strong>
+      e un <strong>file Markdown</strong> utile per la documentazione tecnica e la conformità GDPR.
+    </p>
+
+    <h3>Sintassi</h3>
+    <pre><code>privacy-flow render &lt;input.(yaml|json)&gt; [-o out_dir]</code></pre>
+
+    <h3>Funzionamento</h3>
+    <ol>
+      <li><strong>Lettura del modello:</strong> carica il file <code>privacy.yaml</code> o <code>.json</code>.</li>
+      <li><strong>Generazione del report HTML:</strong> crea una pagina completa con diagramma, legenda e riepiloghi.</li>
+      <li><strong>Creazione del Markdown (<code>flowmap.md</code>):</strong> produce una versione testuale e versionabile del modello.</li>
+      <li><strong>Esportazione dei risultati:</strong> salva tutto nella directory di output (default: <code>out/</code>).</li>
+    </ol>
+
+    <h3>Output generati</h3>
+    <pre><code>out/
+├── report.html       ← report grafico interattivo
+├── flowmap.md        ← documentazione Markdown
+└── flowmap.json      ← dati strutturati esportabili
+    </code></pre>
+
+    <h3>Esempio</h3>
+    <pre><code>privacy-flow render privacy.yaml -o out_report</code></pre>
+
+    <ul>
+      <li><code>out_report/report.html</code> – report visivo con diagramma dei flussi</li>
+      <li><code>out_report/flowmap.md</code> – documentazione testuale per wiki o repository</li>
+      <li><code>out_report/flowmap.json</code> – dati strutturati esportabili</li>
+    </ul>
+
+    <h3>Utilizzi consigliati</h3>
+    <ul>
+      <li>Integrare <code>flowmap.md</code> nella documentazione aziendale o nei repository di compliance.</li>
+      <li>Automatizzare la generazione della documentazione tramite pipeline CI/CD.</li>
+      <li>Stampare <code>report.html</code> in formato A4 orizzontale per audit e verifiche.</li>
+    </ul>
   </section>
 
   <section id="licenze">
@@ -230,10 +278,12 @@ Data subjects: 1
     <h3>Visualizzare informazioni licenza</h3>
     <pre><code>privacy-flow license</code></pre>
   </section>
+
 </main>
 
 <footer>
   <p>© 2025 <a href="index.html">PrivacyFlow Labs</a> – Tutti i diritti riservati</p>
 </footer>
+
 </body>
 </html>
