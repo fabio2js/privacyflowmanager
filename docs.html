@@ -59,7 +59,7 @@
 </header>
 
 <nav class="local">
-  <a href="#intro">Introduzione</a>
+  <a href="#intro">Installazione</a>
   <a href="#cli">Comandi CLI</a>
   <a href="#yaml">Esempio YAML</a>
   <a href="#output">Output</a>
@@ -68,7 +68,7 @@
 
 <main class="container">
   <section id="intro">
-    <h2>Introduzione</h2>
+    <h2>Installazione</h2>
     <p>
       PrivacyFlow è un toolkit per mappare automaticamente i flussi di dati personali,
       documentare i trattamenti e generare report di conformità GDPR.
@@ -76,7 +76,7 @@
     </p>
   </section>
   <section id="install">
-    <h2>Installazione</h2>
+     
     <p>
       PrivacyFlow è distribuito come pacchetto Python su <a href="https://pypi.org/project/privacyflow/" target="_blank">PyPI</a>.
       Può essere installato in qualsiasi ambiente con Python ≥ 3.10.
@@ -124,6 +124,42 @@ privacy-flow render out/merged/merged.yaml
 
   <section id="yaml">
     <h2>Esempio di file <code>privacy.yaml</code></h2>
+    <h3>Struttura del file <code>privacy.yaml</code></h3>
+<p>
+Il file <code>privacy.yaml</code> definisce la mappa dei trattamenti dei dati personali,
+suddivisa in due sezioni principali: <code>nodes</code> e <code>flows</code>.
+</p>
+<h4>Nodi (<code>nodes</code>)</h4>
+<table>
+  <thead>
+    <tr><th>Campo</th><th>Descrizione</th><th>Esempio</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>id</code></td><td>Identificatore univoco del nodo</td><td><code>acme</code></td></tr>
+    <tr><td><code>name</code></td><td>Nome leggibile del soggetto o sistema</td><td><code>ACME Srl</code></td></tr>
+    <tr><td><code>type</code></td><td>Ruolo GDPR o categoria (es. <code>controller</code>, <code>processor</code>, <code>thirdparty</code>, <code>datastore</code>, <code>subject</code>)</td><td><code>controller</code></td></tr>
+    <tr><td><code>region</code></td><td>Area geografica o giurisdizione</td><td><code>EU</code></td></tr>
+    <tr><td><code>dpo</code></td><td>Contatto del Data Protection Officer (facoltativo)</td><td><code>privacy@acme.it</code></td></tr>
+    <tr><td><code>lawful_bases</code></td><td>Basi giuridiche applicabili al nodo</td><td><code>[contract, legal_obligation]</code></td></tr>
+  </tbody>
+</table>
+
+<h4>Flussi (<code>flows</code>)</h4>
+<table>
+  <thead>
+    <tr><th>Campo</th><th>Descrizione</th><th>Esempio</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>source</code></td><td>Nodo di origine del dato</td><td><code>data_subject</code></td></tr>
+    <tr><td><code>target</code></td><td>Destinatario o sistema di destinazione</td><td><code>acme</code></td></tr>
+    <tr><td><code>purpose</code></td><td>Finalità del trattamento</td><td><code>registration</code></td></tr>
+    <tr><td><code>lawful_basis</code></td><td>Base giuridica del singolo flusso</td><td><code>consent</code></td></tr>
+  </tbody>
+</table>
+
+<p>
+Il formato YAML è leggibile e facilmente versionabile.  
+Nella versione Enterprise può essere esteso con campi personalizzati.
     <pre><code>
 nodes:
   - id: data_subject
